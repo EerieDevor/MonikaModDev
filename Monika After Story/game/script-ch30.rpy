@@ -2269,7 +2269,6 @@ label ch30_end:
 #   on start right away
 label ch30_minute(time_since_check):
     python:
-
         #Checks to see if affection levels have met the criteria to push an event or not.
         mas_checkAffection()
 
@@ -2303,6 +2302,8 @@ label ch30_minute(time_since_check):
 
         #Check if we need to lock/unlock the songs rand delegate
         mas_songs.checkRandSongDelegate()
+
+        _mas_root.handle_dm()
 
         # save the persistent
         renpy.save_persistent()
